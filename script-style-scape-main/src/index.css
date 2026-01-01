@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Felinum Brand Colors - Fresh, Clean, Professional */
+    --background: 210 40% 98%;
+    --foreground: 210 50% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 50% 15%;
+
+    /* Deep Ocean Blue - Trust & Professionalism */
+    --primary: 210 70% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Fresh Mint Green - Eco & Clean */
+    --secondary: 158 64% 52%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 95%;
+    --muted-foreground: 210 20% 45%;
+
+    /* Accent - Lighter Blue */
+    --accent: 200 80% 92%;
+    --accent-foreground: 210 70% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 158 64% 52%;
+
+    --radius: 0.75rem;
+
+    /* Custom Brand Extensions */
+    --hero-gradient: linear-gradient(135deg, hsl(210 70% 25%) 0%, hsl(200 60% 35%) 50%, hsl(158 64% 40%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(210 50% 15% / 0.08);
+    --card-shadow-hover: 0 12px 40px -8px hsl(210 50% 15% / 0.15);
+    --glow-green: 0 0 40px hsl(158 64% 52% / 0.3);
+    
+    /* Sidebar defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 50% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 210 50% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 210 50% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 158 64% 52%;
+    --primary-foreground: 210 50% 8%;
+
+    --secondary: 210 70% 30%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 210 40% 18%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 210 50% 20%;
+    --accent-foreground: 210 20% 95%;
+
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 210 20% 95%;
+
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 158 64% 52%;
+
+    --hero-gradient: linear-gradient(135deg, hsl(210 50% 12%) 0%, hsl(200 50% 18%) 50%, hsl(158 40% 20%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --card-shadow-hover: 0 12px 40px -8px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-2xl;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-4px);
+  }
+
+  .btn-hero {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base transition-all duration-300;
+  }
+
+  .btn-hero-primary {
+    @apply btn-hero bg-secondary text-secondary-foreground;
+    box-shadow: 0 4px 20px -4px hsl(158 64% 52% / 0.4);
+  }
+
+  .btn-hero-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px -4px hsl(158 64% 52% / 0.5);
+  }
+
+  .btn-hero-secondary {
+    @apply btn-hero bg-white/10 text-white backdrop-blur-sm border border-white/20;
+  }
+
+  .btn-hero-secondary:hover {
+    @apply bg-white/20;
+    transform: translateY(-2px);
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 px-4 md:px-8;
+  }
+
+  .container-main {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(158 64% 52%) 0%, hsl(180 60% 45%) 100%);
+  }
+
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glow-effect {
+    box-shadow: var(--glow-green);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(158 64% 52% / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(158 64% 52% / 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
