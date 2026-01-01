@@ -99,7 +99,7 @@ const Footer = () => {
             <div className="space-y-4 text-primary-foreground/70">
               <p>123 Industrial Area<br />City, Country</p>
               <p>
-                <a href="tel:+1234567890" className="hover:text-secondary transition-colors">
+                <a href="tel:+233509327075" className="hover:text-secondary transition-colors">
                   +1 (234) 567-890
                 </a>
               </p>
