@@ -40,7 +40,7 @@ Quantity: ${formData.quantity}
 Delivery Address: ${formData.address}
 ${formData.message ? `Additional Notes: ${formData.message}` : ""}`;
 
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/233509327075?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
 
     toast({
@@ -95,7 +95,7 @@ ${formData.message ? `Additional Notes: ${formData.message}` : ""}`;
                 </div>
                 <div>
                   <div className="text-muted-foreground text-sm">Phone</div>
-                  <div className="font-semibold text-foreground">+1 (234) 567-890</div>
+                  <div className="font-semibold text-foreground">+(233) 50 932 7075</div>
                 </div>
               </div>
 
@@ -115,7 +115,7 @@ ${formData.message ? `Additional Notes: ${formData.message}` : ""}`;
                 </div>
                 <div>
                   <div className="text-muted-foreground text-sm">Address</div>
-                  <div className="font-semibold text-foreground">123 Industrial Area, City</div>
+                  <div className="font-semibold text-foreground">Cape Coast Ghana, City</div>
                 </div>
               </div>
             </div>
